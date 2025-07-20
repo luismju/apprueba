@@ -12,106 +12,176 @@
 
   <style>
     body {
-       background-size: cover;
+      background: linear-gradient(180deg, #f5f0e6, #fefaf5);
       font-family: Roboto, sans-serif;
-      padding: 15px;
+      padding: 20px;
     }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
     .saldo {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.8);
       padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin: 20px 0;
+      text-align: center;
     }
+
+    .saldo h3 { font-size: 30px; color: #333; }
+    .saldo p { font-size: 14px; color: #777; }
+
     .btn-purple {
-      background: #7209b7;
+      background: linear-gradient(90deg, #ff8c42, #ff4e50);
       color: #fff;
-      border-radius: 25px;
-      padding: 12px 30px;
+      border-radius: 30px;
+      padding: 15px 30px;
       margin: 20px 0;
       width: 100%;
       font-size: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
+
+    .btn-purple:hover {
+      transform: scale(1.05);
+    }
+
     .icon-row {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin: 25px 0;
     }
+
     .icon-item {
       text-align: center;
       margin: 10px;
       flex: 1 0 40%;
       max-width: 100px;
+      background: rgba(255,255,255,0.8);
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #444;
+      transition: transform 0.3s;
     }
+
+    .icon-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.95);
+    }
+
     .icon-item i {
-      font-size: 40px;
-      color: #7209b7;
+      font-size: 36px;
     }
+
     .ingresos {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin: 25px 0;
     }
+
     .ingreso-card {
-      background: #fff;
+      background: rgba(255,255,255,0.8);
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 15px;
       width: 45%;
-      margin: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 10px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #333;
       text-align: center;
+      transition: transform 0.3s;
     }
+
+    .ingreso-card:hover {
+      transform: scale(1.05);
+    }
+
     .round-img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 5px;
+      margin: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
+
+    .round-img:hover {
+      transform: scale(1.1);
+    }
+
     .vip-card {
       padding: 15px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
     }
+
+    .vip-card:hover {
+      transform: translateY(-5px);
+    }
+
     .vip1 { background: linear-gradient(240deg, #0C2442, #4F7492); }
     .vip2 { background: linear-gradient(240deg, #DB6F21, #F99905); }
     .vip3 { background: linear-gradient(240deg, #11420c, #4f925e); }
-    .vip4 { background: linear-gradient(240deg, #420c0c, #924f4f); }
 
     .vip-card p { margin: 0; font-size: 14px; }
 
-    @media (max-width: 600px) {
-      .ingreso-card { width: 100%; }
-      .icon-item { flex: 1 0 45%; }
-    }
-
-    /* Barra de navegación inferior */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: #fff;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 10px 0;
+      padding: 12px 0;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
+      backdrop-filter: blur(8px);
+    }
+
+    .bottom-nav a {
+      text-align: center;
+      color: #444;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 3px;
     }
 
     .logo-bitcoin {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .logo-bitcoin img {
       width: 80px;
+    }
+
+    @media (max-width: 600px) {
+      .ingreso-card { width: 100%; }
+      .icon-item { flex: 1 0 45%; }
     }
   </style>
 </head>
@@ -119,60 +189,55 @@
 
 <div class="container">
 
-  <!-- Logo -->
   <div class="logo-bitcoin">
-    <img src="../IMAGENES/logo.jpg" alt="Bitcoin Logo">
+    <img src="../IMAGENES/logo.jpg" alt="Logo">
   </div>
 
-  <!-- Saldo -->
-  <div class="saldo text-center">
+  <div class="saldo">
     <h3>GTQ 8.8</h3>
-    <p class="text-muted">Mi saldo</p>
+    <p>Mi saldo</p>
   </div>
 
-  <!-- Botón ganar dinero con enlace -->
   <a href="tu-otra-pagina.html" class="btn btn-purple">
     <i class="material-icons">swipe</i> Empiece a ganar dinero
   </a>
 
-  <!-- Iconos con botones -->
   <div class="icon-row">
     <div class="icon-item">
-      <a href="recargar.html">
+      <a href="recargar.html" style="color:#444; text-decoration:none;">
         <i class="material-icons">monetization_on</i>
         <p>Recargar</p>
       </a>
     </div>
     <div class="icon-item">
-      <a href="retirar.html">
+      <a href="retirar.html" style="color:#444; text-decoration:none;">
         <i class="material-icons">payment</i>
         <p>Retirar</p>
       </a>
     </div>
     <div class="icon-item">
-      <a href="#" onclick="compartirPagina(); return false;">
+      <a href="#" onclick="compartirPagina(); return false;" style="color:#444; text-decoration:none;">
         <i class="material-icons">share</i>
         <p>Invitar</p>
       </a>
     </div>
     <div class="icon-item">
-      <a href="https://t.me/tu_grupo_telegram" target="_blank">
+      <a href="https://t.me/tu_grupo_telegram" target="_blank" style="color:#444; text-decoration:none;">
         <i class="material-icons">support_agent</i>
-        <p>Grupo de TELEGRAM</p>
+        <p>Telegram</p>
       </a>
     </div>
   </div>
 
-  <!-- Script compartir -->
   <script>
     function compartirPagina() {
       if (navigator.share) {
         navigator.share({
-          title: '¡Únete a nosotros!',
-          text: 'Mira esta increíble página:',
+          title: '¡Únete a TaskyCash!',
+          text: 'Mira esta increíble app:',
           url: window.location.href
         })
-        .then(() => console.log('Compartido exitosamente'))
+        .then(() => console.log('Compartido correctamente'))
         .catch((error) => console.error('Error al compartir:', error));
       } else {
         alert('Tu navegador no admite la función de compartir.');
@@ -180,8 +245,6 @@
     }
   </script>
 
-  <!-- Obtener ingresos -->
-  <h5 class="text-center">Obtener ingresos</h5>
   <div class="ingresos">
     <div class="ingreso-card">
       <h5>GTQ 0</h5>
@@ -193,16 +256,14 @@
     </div>
   </div>
 
-  <!-- Imágenes redondas con botones -->
   <div class="text-center">
-    <a href="empresa.html"><img src="plata2.jpg" class="round-img" alt="Intro"></a>
-    <a href="reglas.html"><img src="plata3.jpg" class="round-img" alt="Reglas"></a>
-    <a href="agentes.html"><img src="plata4.jpg" class="round-img" alt="Agentes"></a>
-    <a href="calcular.html"><img src="plata2.jpg" class="round-img" alt="Calcular"></a>
+    <a href="empresa.html"><img src="plata2.jpg" class="round-img"></a>
+    <a href="reglas.html"><img src="plata3.jpg" class="round-img"></a>
+    <a href="agentes.html"><img src="plata4.jpg" class="round-img"></a>
+    <a href="calcular.html"><img src="plata2.jpg" class="round-img"></a>
   </div>
 
-  <!-- Membresía VIP -->
-  <h6 class="mt-4">Nivel de membresía:</h6>
+  <h5 class="text-center mt-4 mb-3" style="color:#333;">Nivel de membresía:</h5>
 
   <div class="vip-card vip1 d-flex justify-content-between align-items-center">
     <div>
@@ -222,20 +283,21 @@
     <a href="vip2.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
   </div>
 
-  <div class="vip-card vip3 d-flex justify-content-between align-items-center">
+  <div class="vip-card vip3 d-flex justify-content-between align-items-center" style="margin-bottom:80px;">
     <div>
       <strong>VIP3</strong><br>
       <p>Balance mínimo GTQ: 120</p>
-      <p>Comisión 24% | 6 Pedidos</p>
+      <p>Comisión 26% | 6 Pedidos</p>
     </div>
-    <a href="vip2.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
+    <a href="vip3.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
   </div>
 
-<!-- Barra inferior -->
+</div>
+
 <div class="bottom-nav">
-  <a href="#"><i>🏠</i><span>Inicio</span></a>
-  <a href="#"><i>👤</i><span>Mi cuenta</span></a>
-  <a href="#"><i>⚙️</i><span>Ajustes</span></a>
+  <a href="#"><i class="material-icons">home</i><span>Inicio</span></a>
+  <a href="#"><i class="material-icons">person</i><span>Mi cuenta</span></a>
+  <a href="#"><i class="material-icons">settings</i><span>Ajustes</span></a>
 </div>
 
 </body>
