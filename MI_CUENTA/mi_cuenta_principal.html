@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuenta VIP</title>
+
+  <style>
+    /* ====== ESTILOS GENERALES ====== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      background: #ffe6fa;
+      color: #333;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* ====== TÍTULO PRINCIPAL ====== */
+    h2 {
+      font-size: 28px;
+      color: #444;
+    }
+
+    .subtext {
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    /* ====== CONTENEDOR DE TARJETA + BOTÓN REDONDO ====== */
+    .card-container {
+      position: relative;
+    }
+
+    /* ====== TARJETA PRINCIPAL (violeta) ====== */
+    .card {
+      background: linear-gradient(135deg, #8f00ff, #5600d3);
+      color: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ====== BOTÓN REDONDO MORADO CON SÍMBOLO "+" ====== */
+    .round-button {
+      position: absolute;
+      top: -20px;     /* Separación desde arriba */
+      right: -20px;   /* Separación desde la derecha */
+      width: 50px;
+      height: 50px;
+      background-color: #7a00cc;
+      border-radius: 50%;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    /* ====== ESTADÍSTICAS ====== */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .stats h4 {
+      font-size: 24px;
+    }
+
+    /* ====== SECCIÓN DE SALDO ====== */
+    .saldo {
+      background: white;
+      color: #5600d3;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* ====== BOTÓN PARA RECIBIR PEDIDOS ====== */
+    .btn {
+      display: block;
+      background: #7300cc;
+      color: white;
+      padding: 15px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: auto;
+      max-width: 90%;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #5e00aa;
+    }
+
+    /* ====== INSTRUCCIONES ====== */
+    .instrucciones {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    /* ====== FOOTER FIJO CON TRES ÍCONOS "Ó" ====== */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      backdrop-filter: blur(8px);
+    }
+
+    .footer div {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Título y fondos -->
+    <h2>GTQ8.80</h2>
+    <p class="subtext">Fondos de la cuenta</p>
+
+    <!-- Contenedor de tarjeta y botón redondo -->
+    <div class="card-container">
+      <!-- Botón redondo que lleva a otra pestaña -->
+      <a href="PONER_TU LINK" target="_blank" class="round-button">+</a>
+
+      <!-- Tarjeta morada con información de la cuenta -->
+      <div class="card">
+        <h3>VIP0</h3>
+        <p class="subtext">Comisión 0% | 0 Pedido</p>
+
+        <!-- Estadísticas -->
+        <div class="stats">
+          <div>
+            <h4>0</h4>
+            <p>Completado</p>
+          </div>
+          <div>
+            <h4>0</h4>
+            <p>Todos</p>
+          </div>
+          <div>
+            <h4>0</h4>
+            <p>Incompleto</p>
+          </div>
+        </div>
+
+        <!-- Saldo disponible -->
+        <div class="saldo">
+          <span>GTQ8.80</span>
+          <p>Saldo disponible</p>
+        </div>
+
+        <!-- Botón para comenzar -->
+        <a href="pedidos.html" class="btn">EMPEZAR A RECIBIR PEDIDOS</a>
+      </div>
+    </div>
+
+    <!-- Instrucciones -->
+    <div class="instrucciones">
+      <h4>ORDEN PARA TOMAR INSTRUCCIONES</h4>
+      <p>(1) El número de cuentas que se pueden capturar por día es de 0 órdenes</p>
+      <p>(2) La comisión por captación de órdenes en este canal es del</p>
+      <p>(3) Basado en la tecnología LBS, el sistema empareja automáticamente los productos a través de la nube</p>
+    </div>
+  </div>
+
+  </div>
+
+    <!-- Barra inferior -->
+    <div class="bottom-nav">
+        <a href="#">
+            <i>🏠</i>
+            <span>Inicio</span>
+        </a>
+        <a href="#">
+            <i>👤</i>
+            <span>Mi cuenta</span>
+        </a>
+        <a href="#">
+            <i>⚙️</i>
+            <span>Ajustes</span>
+        </a>
+    </div>
+</body>
+</html>

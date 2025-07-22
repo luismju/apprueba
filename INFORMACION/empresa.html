@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción Crypto</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .header {
+      width: 100%;
+      background: #fff;
+      color: #333;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .header .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .goback {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .language-selector {
+      font-size: 14px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .content {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .content h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #c0392b;
+    }
+
+    .content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 500px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .language-selector {
+        margin-top: 10px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="header">
+    <a href="javascript:history.back()" class="goback">← Volver</a>
+    <span class="title" id="page-title">Introducción</span>
+    <select class="language-selector" onchange="cambiarIdioma(this.value)">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
+
+  <div class="content" id="contenido">
+
+    <img src="/upload/30e746145909dac4/1e83c23829143a5a.jpg" alt="Cripto introducción">
+
+    <h1>Bienvenido a Crypto Wallet</h1>
+
+    <p>
+      Bienvenido a nuestra plataforma de gestión y minería de criptomonedas. Puedes recargar tu wallet, retirar tus ganancias y participar en pools de minería inteligentes.
+    </p>
+
+    <p>
+      Los usuarios reales deben proporcionar su dirección de billetera y datos de transacción. El sistema asignará automáticamente tareas de minería o staking, generando comisiones por cada operación completada.
+    </p>
+
+  </div>
+
+  <script>
+    function cambiarIdioma(idioma) {
+      const titulo = document.getElementById("page-title");
+      const contenido = document.getElementById("contenido");
+
+      if (idioma === "es") {
+        titulo.textContent = "Introducción";
+        contenido.innerHTML = `
+          <img src="/upload/30e746145909dac4/1e83c23829143a5a.jpg" alt="Cripto introducción">
+
+          <h1>Bienvenido a Crypto Wallet</h1>
+
+          <p>
+            Bienvenido a nuestra plataforma de gestión y minería de criptomonedas. Puedes recargar tu wallet, retirar tus ganancias y participar en pools de minería inteligentes.
+          </p>
+
+          <p>
+            Los usuarios reales deben proporcionar su dirección de billetera y datos de transacción. El sistema asignará automáticamente tareas de minería o staking, generando comisiones por cada operación completada.
+          </p>
+        `;
+      } else if (idioma === "en") {
+        titulo.textContent = "Introduction";
+        contenido.innerHTML = `
+          <img src="/upload/30e746145909dac4/1e83c23829143a5a.jpg" alt="Crypto Introduction">
+
+          <h1>Welcome to Crypto Wallet</h1>
+
+          <p>
+            Welcome to our cryptocurrency management and mining platform. You can recharge your wallet, withdraw your earnings, and participate in smart mining pools.
+          </p>
+
+          <p>
+            Users must provide their wallet address and transaction data. The system will automatically assign mining or staking tasks, generating commissions for each completed operation.
+          </p>
+        `;
+      } else if (idioma === "zh") {
+        titulo.textContent = "加密货币介绍";
+        contenido.innerHTML = `
+          <img src="/upload/30e746145909dac4/1e83c23829143a5a.jpg" alt="加密货币介绍">
+
+          <h1>欢迎使用 Crypto Wallet</h1>
+
+          <p>
+            欢迎来到我们的加密货币管理和挖矿平台。您可以充值钱包、提取收益，并参与智能挖矿池。
+          </p>
+
+          <p>
+            用户需要提供钱包地址和交易数据。系统将自动分配挖矿或质押任务，每完成一笔操作，用户将获得佣金。
+          </p>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
