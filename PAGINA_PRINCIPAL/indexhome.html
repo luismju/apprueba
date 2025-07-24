@@ -12,23 +12,22 @@
 
   <style>
     body {
-      background: linear-gradient(180deg, #f5f0e6, #fefaf5);
+      background: #ff7043; /* Naranja llamativo de fondo */
       font-family: Roboto, sans-serif;
-      padding-bottom: 80px; /* espacio para la barra inferior */
+      padding-bottom: 80px;
     }
 
     .container {
       max-width: 500px;
       margin: auto;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
+      background: #fff;
       border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
     .saldo {
-      background: rgba(255, 255, 255, 0.8);
+      background: #fbe9e7;
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -36,19 +35,20 @@
       text-align: center;
     }
 
-    .saldo h3 { font-size: 30px; color: #333; }
-    .saldo p { font-size: 14px; color: #777; }
+    .saldo h3 { font-size: 30px; color: #d84315; }
+    .saldo p { font-size: 14px; color: #6d4c41; }
 
     .btn-purple {
-      background: linear-gradient(90deg, #ff8c42, #ff4e50);
+      background: linear-gradient(90deg, #ff8c42, #ff3d00);
       color: #fff;
       border-radius: 30px;
       padding: 15px 30px;
       margin: 20px 0;
       width: 100%;
       font-size: 16px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
+      border: none;
     }
 
     .btn-purple:hover {
@@ -67,21 +67,22 @@
       margin: 10px;
       flex: 1 0 40%;
       max-width: 100px;
-      background: rgba(255,255,255,0.8);
-      padding: 10px;
+      background: #fff3e0;
+      padding: 15px;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       color: #444;
       transition: transform 0.3s;
     }
 
     .icon-item:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,0.95);
+      background: #ffe0b2;
     }
 
     .icon-item i {
       font-size: 36px;
+      color: #ff5722;
     }
 
     .ingresos {
@@ -92,13 +93,13 @@
     }
 
     .ingreso-card {
-      background: rgba(255,255,255,0.8);
+      background: #ffccbc;
       padding: 15px;
       border-radius: 15px;
       width: 45%;
       margin: 10px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      color: #333;
+      color: #3e2723;
       text-align: center;
       transition: transform 0.3s;
     }
@@ -108,8 +109,8 @@
     }
 
     .round-img {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       object-fit: cover;
       margin: 10px;
@@ -135,27 +136,26 @@
       transform: translateY(-5px);
     }
 
-    .vip1 { background: linear-gradient(240deg, #0C2442, #4F7492); }
-    .vip2 { background: linear-gradient(240deg, #DB6F21, #F99905); }
-    .vip3 { background: linear-gradient(240deg, #11420c, #4f925e); }
+    .vip1 { background: linear-gradient(240deg, #f57c00, #ff9800); }
+    .vip2 { background: linear-gradient(240deg, #e64a19, #ff7043); }
+    .vip3 { background: linear-gradient(240deg, #bf360c, #ff5722); }
 
     .vip-card p { margin: 0; font-size: 14px; }
 
-    /* ====== BOTÓN REDONDO ====== */
     .round-button {
       position: absolute;
       top: -20px;
       right: -20px;
       width: 50px;
       height: 50px;
-      background-color: #7a00cc;
+      background-color: #e65100;
       border-radius: 50%;
       border: none;
       font-size: 28px;
       color: white;
       cursor: pointer;
       z-index: 2;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      box-shadow: 0 0 8px rgba(0,0,0,0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -174,14 +174,15 @@
 
     .logo-bitcoin img {
       width: 80px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
-    /* ===== BOTTOM NAV ===== */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: rgba(255,255,255,0.95);
+      background: #fff3e0;
       box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
       display: flex;
       justify-content: space-around;
@@ -189,13 +190,12 @@
       padding: 10px 0;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-      backdrop-filter: blur(8px);
       z-index: 100;
     }
 
     .bottom-nav a {
       text-decoration: none;
-      color: #444;
+      color: #6d4c41;
       font-size: 14px;
       text-align: center;
     }
@@ -226,7 +226,7 @@
   </div>
 
   <div class="card-container">
-    <a href="../OPCIONES/deposito.html" class="btn btn-purple">
+    <a href="../PAGINA_PRINCIPAL/RECHARGE/recharge.html" class="btn btn-purple">
       <i class="material-icons">swipe</i> Empiece a ganar dinero
     </a>
     <a href="../OPCIONES/micuenta.html" target="_blank" class="round-button">+</a>
@@ -301,7 +301,7 @@
       <p>Balance mínimo GTQ: 25</p>
       <p>Comisión 22% | 6 Pedidos</p>
     </div>
-    <a href="vip1.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
+    <a href="../VIP/vip1.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
   </div>
 
   <div class="vip-card vip2 d-flex justify-content-between align-items-center">
@@ -310,7 +310,7 @@
       <p>Balance mínimo GTQ: 50</p>
       <p>Comisión 24% | 6 Pedidos</p>
     </div>
-    <a href="vip2.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
+    <a href="../VIP/vip2.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
   </div>
 
   <div class="vip-card vip3 d-flex justify-content-between align-items-center" style="margin-bottom:80px;">
@@ -319,7 +319,7 @@
       <p>Balance mínimo GTQ: 120</p>
       <p>Comisión 45% | 6 Pedidos</p>
     </div>
-    <a href="vip3.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
+    <a href="../VIP/vip3.html" style="color: #fff; text-decoration: underline;">Unirse >></a>
   </div>
 
 </div>
